@@ -194,8 +194,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = 0; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = 1613910665; // December 31, 2008
 
-        consensus.nMinimumChainWork = uint256S("0x000001b303c462ad76b76822c6e9db198fe9c144ebcbdb10f07ad83c7c9df201");
-        consensus.defaultAssumeValid = uint256S("0x002fd87711d7d18d4b79fe04cb1f5e375c5a80ab435c775c2bccb4b3fca0bd0fe9"); // 1864000
+        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.defaultAssumeValid = uint256S("0x00"); // 1864000
 
         pchMessageStart[0] = 0x0d;
         pchMessageStart[1] = 0x13;
