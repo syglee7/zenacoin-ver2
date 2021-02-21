@@ -1,0 +1,13 @@
+python genesis.py -z "Blockchain by example 2021" -n 1 -t 1613910665 -v 1000000000 -b 0x1e0ffff0
+04ffff001d01041a426c6f636b636861696e206279206578616d706c652032303231
+algorithm: SHA256
+merkle hash: 2fd87711d7d18d4b79fe04cb1f5e375c5a80ab435c775c2bccb4b3fca0bd0fe9
+pszTimestamp: Blockchain by example 2021
+pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+time: 1613910665
+bits: 0x1e0ffff0
+Searching for genesis hash..
+415571.0 hash/s, estimate: 2.9 hgenesis hash found!
+nonce: 1558696
+genesis hash: 000001b303c462ad76b76822c6e9db198fe9c144ebcbdb10f07ad83c7c9df201
+
