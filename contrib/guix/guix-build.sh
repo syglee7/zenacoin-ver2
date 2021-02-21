@@ -186,7 +186,7 @@ EOF
 [ -z "$SOURCES_PATH" ] || mkdir -p "$SOURCES_PATH"
 [ -z "$BASE_CACHE" ]   || mkdir -p "$BASE_CACHE"
 
-# Deterministically build Bitcoin Core
+# Deterministically build Zenacoin Core
 # shellcheck disable=SC2153
 for host in $HOSTS; do
 
@@ -204,7 +204,7 @@ INFO: Building commit ${GIT_COMMIT:?not set} for platform triple ${HOST:?not set
       ...using reference timestamp: ${SOURCE_DATE_EPOCH:?not set}
       ...running at most ${MAX_JOBS:?not set} jobs
       ...from worktree directory: '${PWD}'
-          ...bind-mounted in container to: '/bitcoin'
+          ...bind-mounted in container to: '/zenacoin'
       ...in build directory: '$(distsrc_for_host "$HOST")'
           ...bind-mounted in container to: '$(DISTSRC_BASE=/distsrc-base && distsrc_for_host "$HOST")'
       ...outputting in: '${OUTDIR:?not set}'
@@ -230,24 +230,24 @@ EOF
         #
         #     When --container is specified, the default behavior is to share
         #     the current working directory with the isolated container at the
-        #     same exact path (e.g. mapping '/home/satoshi/bitcoin/' to
-        #     '/home/satoshi/bitcoin/'). This means that the $PWD inside the
+        #     same exact path (e.g. mapping '/home/satoshi/zenacoin/' to
+        #     '/home/satoshi/zenacoin/'). This means that the $PWD inside the
         #     container becomes a source of irreproducibility. --no-cwd disables
         #     this behaviour.
         #
         #   --share=SPEC       for containers, share writable host file system
         #                      according to SPEC
         #
-        #   --share="$PWD"=/bitcoin
+        #   --share="$PWD"=/zenacoin
         #
-        #                     maps our current working directory to /bitcoin
+        #                     maps our current working directory to /zenacoin
         #                     inside the isolated container, which we later cd
         #                     into.
         #
         #     While we don't want to map our current working directory to the
         #     same exact path (as this introduces irreproducibility), we do want
         #     it to be at a _fixed_ path _somewhere_ inside the isolated
-        #     container so that we have something to build. '/bitcoin' was
+        #     container so that we have something to build. '/zenacoin' was
         #     chosen arbitrarily.
         #
         #   ${SOURCES_PATH:+--share="$SOURCES_PATH"}
@@ -262,7 +262,7 @@ EOF
         #
         #   --keep-failed     keep build tree of failed builds
         #
-        #     When builds of the Guix environment itself (not Bitcoin Core)
+        #     When builds of the Guix environment itself (not Zenacoin Core)
         #     fail, it is useful for the build tree to be kept for debugging
         #     purposes.
         #
@@ -281,7 +281,7 @@ EOF
                                  --container \
                                  --pure \
                                  --no-cwd \
-                                 --share="$PWD"=/bitcoin \
+                                 --share="$PWD"=/zenacoin \
                                  --share="$DISTSRC_BASE"=/distsrc-base \
                                  --share="$OUTDIR"=/outdir \
                                  --expose="$(git rev-parse --git-common-dir)" \
@@ -299,7 +299,7 @@ EOF
                                         ${BASE_CACHE:+BASE_CACHE="$BASE_CACHE"} \
                                         DISTSRC="$(DISTSRC_BASE=/distsrc-base && distsrc_for_host "$HOST")" \
                                         OUTDIR=/outdir \
-                                      bash -c "cd /bitcoin && bash contrib/guix/libexec/build.sh"
+                                      bash -c "cd /zenacoin && bash contrib/guix/libexec/build.sh"
     )
 
 done

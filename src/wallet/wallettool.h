@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2020 The Bitcoin Core developers
+// Copyright (c) 2016-2020 The Zenacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_WALLETTOOL_H
-#define BITCOIN_WALLET_WALLETTOOL_H
+#ifndef ZENACOIN_WALLET_WALLETTOOL_H
+#define ZENACOIN_WALLET_WALLETTOOL_H
 
 #include <wallet/wallet.h>
 
@@ -14,4 +14,4 @@ bool ExecuteWalletToolFunc(const ArgsManager& args, const std::string& command);
 
 } // namespace WalletTool
 
-#endif // BITCOIN_WALLET_WALLETTOOL_H
+#endif // ZENACOIN_WALLET_WALLETTOOL_H

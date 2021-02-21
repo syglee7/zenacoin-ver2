@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The Bitcoin Core developers
+// Copyright (c) 2020 The Zenacoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_SQLITE_H
-#define BITCOIN_WALLET_SQLITE_H
+#ifndef ZENACOIN_WALLET_SQLITE_H
+#define ZENACOIN_WALLET_SQLITE_H
 
 #include <wallet/db.h>
 
@@ -117,4 +117,4 @@ std::unique_ptr<SQLiteDatabase> MakeSQLiteDatabase(const fs::path& path, const D
 
 std::string SQLiteDatabaseVersion();
 
-#endif // BITCOIN_WALLET_SQLITE_H
+#endif // ZENACOIN_WALLET_SQLITE_H
